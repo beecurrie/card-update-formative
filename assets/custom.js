@@ -3,30 +3,112 @@
 
   // Variables
   var getButton = document.getElementById('submit');
-
-  var getImg = document.querySelector('.card img');
-  console.log(getImg);
-
   var updateImg = document.querySelector('.card img');
-
-  //1. get the image input
+  var getCard = document.querySelector('.card');
+  var getFont = document.getElementById('font');
+  var getBorder = document.getElementById('border')
   var getImageSelect = document.getElementById('image');
-  console.log(getImageSelect);
+  var getBackground = document.getElementById('background');
+  var selectHeader = document.querySelector('.card h1');
+  var selectBorder = document.getElementById('cardBorder');
+  var getMessage = document.querySelector('#message');
 
-  //2. get the image input value
+
+
+
+
+
+
+
 
 
 // Function for button click update
 function updateChoices (){
+// Image Conditionals--------------------------------------------------
   var getImageSelectVal = getImageSelect.value;
+
   if (getImageSelectVal === 'christmas') {
-      updateImg.src = 'assets/christmas.jpg';
+    updateImg.src = 'assets/christmas.jpg';
   } else if (getImageSelectVal === 'birthday') {
     updateImg.src = 'assets/birthday.jpg';
   } else if (getImageSelectVal === 'valentines'){
     updateImg.src = 'assets/valentines.jpg';
+  }
+
+// Background Conditionals---------------------------------------------
+  var getBackgroundValue = getBackground.value;
+
+  if (getBackgroundValue === 'celadon') {
+    getCard.classList.add('celadonBackground');
+  } else {
+    getCard.classList.remove('celadonBackground');
+  }
+
+  if (getBackgroundValue === 'graphite') {
+    getCard.classList.add('graphiteBackground');
+  } else {
+    getCard.classList.remove('graphiteBackground');
+  }
+
+  if (getBackgroundValue === 'rose') {
+    getCard.classList.add('roseBackground');
+  } else {
+    getCard.classList.remove('roseBackground');
+  }
+
+// Font Conditionals----------------------------------------------------
+    var getFontValue = getFont.value;
+
+    if (getFontValue === 'handwriting') {
+      selectHeader.classList.add('handwriting');
+    } else {
+      selectHeader.classList.remove('handwriting');
     }
-  console.log(getImageSelectVal);
+
+    if (getFontValue === 'sketch') {
+      selectHeader.classList.add('sketch');
+    } else {
+      selectHeader.classList.remove('sketch');
+    }
+
+    if (getFontValue === 'print') {
+      selectHeader.classList.add('print');
+    } else {
+      selectHeader.classList.remove('print');
+    }
+
+// Border Conditionals -------------------------------------------------
+    var getBorderVal = getBorder.value;
+
+    if (getBorderVal === 'none') {
+      selectBorder.classList.add('noBorder');
+    } else {
+      selectBorder.classList.remove('noBorder');
+    }
+
+    if (getBorderVal === 'thin') {
+      selectBorder.classList.add('smallBorder');
+    } else {
+      selectBorder.classList.remove('smallBorder');
+    }
+
+    if (getBorderVal === 'thick') {
+      selectBorder.classList.add('bigBorder');
+    } else {
+      selectBorder.classList.remove('bigBorder');
+    }
+
+    if (getBorderVal === 'filled') {
+      selectBorder.classList.add('filledBorder');
+    } else {
+      selectBorder.classList.remove('filledBorder');
+    }
+// Message Javascript --------------------------------------------------
+
+  var userMessage = getMessage.value;
+    selectHeader.innerHTML = userMessage;
+
+
 };
 
 
