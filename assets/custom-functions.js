@@ -15,8 +15,8 @@
 
 
 
-  // Image Conditionals--------------------------------------------------
-  function updateChoices (){
+  // Image Function--------------------------------------------------
+  function updateImage (){
     var getImageSelectVal = getImageSelect.value;
     if (getImageSelectVal === 'christmas') {
       updateImg.src = 'assets/christmas.jpg';
@@ -28,7 +28,8 @@
   };
 
 
-// Background Conditionals---------------------------------------------
+// Background Function---------------------------------------------
+  function updateColor (){
     var getBackgroundValue = getBackground.value;
 
     if (getBackgroundValue === 'celadon') {
@@ -48,7 +49,8 @@
     }
   };
 
-// Font Conditionals----------------------------------------------------
+// Font Function----------------------------------------------------
+function updateFont (){
     var getFontValue = getFont.value;
 
     if (getFontValue === 'handwriting') {
@@ -70,7 +72,8 @@
     }
   };
 
-// Border Conditionals -------------------------------------------------
+// Border Function -------------------------------------------------
+function updateBorder (){
     var getBorderVal = getBorder.value;
 
     if (getBorderVal === 'none') {
@@ -96,7 +99,8 @@
   };
 
 
-// Message Javascript --------------------------------------------------
+// Message Function --------------------------------------------------
+function updateMessage (){
     var userMessage = getMessage.value;
     selectHeader.innerHTML = userMessage;
 };
@@ -104,7 +108,11 @@
 
 // Click event to update the DOM
 getButton.onclick = function(){
-  updateChoices();
+  updateImage(),
+  updateColor(),
+  updateFont(),
+  updateBorder(),
+  updateMessage();
 };
 
 });
